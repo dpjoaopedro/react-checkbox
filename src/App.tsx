@@ -62,7 +62,7 @@ function App() {
       <h2>Categorias</h2>
       <div className="flex">
         <div className="checkbox-container">{categoriasCheckbox}</div>
-        <div className="container">{produtosCard}</div>
+        <div className="produtos-container">{produtosCard}</div>
       </div>
     </div>
   );
