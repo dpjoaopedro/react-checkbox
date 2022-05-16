@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.app {
+  margin: 16px
 }
 
 .card {
@@ -8,10 +8,20 @@
   border-radius: 5px;
   width: 100px;
   height: 100px;
+  text-align: center;
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 2px 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.checkbox-container {
+  min-width: 100px;
 }

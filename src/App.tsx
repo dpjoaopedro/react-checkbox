@@ -39,7 +39,11 @@ function App() {
     .filter((categoria) => categoria.selecionado)
     .map((categoria) => categoria.nome);
 
-  const produtosSelecionados = produtos.filter((produto) =>
+  const produtosOrdenados = produtos.sort((a, b) =>
+    a.nome.localeCompare(b.nome)
+  );
+
+  const produtosSelecionados = produtosOrdenados.filter((produto) =>
     nomeDasCategoriasSelecionadas.includes(produto.categoria)
   );
 
@@ -50,8 +54,12 @@ function App() {
   ));
 
   return (
-    <div className="App">
-      {categoriasCheckbox} <div className="container">{produtosCard}</div>
+    <div className="app">
+      <h1>Categorias</h1>
+      <div className="flex">
+        <div className="checkbox-container">{categoriasCheckbox}</div>
+        <div className="container">{produtosCard}</div>
+      </div>
     </div>
   );
 }
