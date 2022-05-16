@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 function App() {
   const [categorias, setCategorias] = useState([
-    { nome: "comida", selecionado: false },
+    { nome: "comida", selecionado: true },
     { nome: "bebida", selecionado: false },
     { nome: "limpeza", selecionado: false },
   ]);
@@ -30,7 +30,12 @@ function App() {
 
   const categoriasCheckbox = categorias.map((categoria, index) => (
     <div key={index}>
-      <input type="checkbox" id={categoria.nome} onChange={changeHandler} />
+      <input
+        type="checkbox"
+        id={categoria.nome}
+        onChange={changeHandler}
+        checked={categoria.selecionado}
+      />
       <label htmlFor={categoria.nome}> {categoria.nome} </label>
     </div>
   ));
