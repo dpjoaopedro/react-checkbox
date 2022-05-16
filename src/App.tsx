@@ -10,7 +10,7 @@ function App() {
 
   const [produtos] = useState([
     { nome: "queijo", categoria: "comida" },
-    { nome: "preseunto", categoria: "comida" },
+    { nome: "presunto", categoria: "comida" },
     { nome: "vinho", categoria: "bebida" },
     { nome: "cerveja", categoria: "bebida" },
     { nome: "sabão", categoria: "limpeza" },
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Categorias</h1>
+      <h2>Categorias</h2>
       <div className="flex">
         <div className="checkbox-container">{categoriasCheckbox}</div>
         <div className="container">{produtosCard}</div>
