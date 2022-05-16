@@ -1,21 +1,20 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {
+  Categoria,
+  categoriasCarregadasDoBackend,
+  Produto,
+  produtosCarregadosDoBackend,
+} from "./App.models";
 
 function App() {
-  const [categorias, setCategorias] = useState([
-    { nome: "comida", selecionado: true },
-    { nome: "bebida", selecionado: false },
-    { nome: "limpeza", selecionado: false },
-  ]);
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
+  const [produtos, setProdutos] = useState<Produto[]>([]);
 
-  const [produtos] = useState([
-    { nome: "queijo", categoria: "comida" },
-    { nome: "presunto", categoria: "comida" },
-    { nome: "vinho", categoria: "bebida" },
-    { nome: "cerveja", categoria: "bebida" },
-    { nome: "sabão", categoria: "limpeza" },
-    { nome: "detergente", categoria: "limpeza" },
-  ]);
+  useEffect(() => {
+    setCategorias(categoriasCarregadasDoBackend);
+    setProdutos(produtosCarregadosDoBackend);
+  }, []);
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newCategorias = categorias.map((categoria) => ({
